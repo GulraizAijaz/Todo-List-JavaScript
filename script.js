@@ -10,18 +10,7 @@ const delAll= document.getElementById("del-all");
 
 
 
-// submitBtn.addEventListener("click",function addTask(e){
-//     e.preventDefault();
-//     if(input.value === ""){
-//         alert("please write some task then submit");
-//     }
-//     else{
-//         let newTask = `<div class="task-div center-div"> <button id="done">done</button><span id="span">${input.value}</span>
-//                          <button>remove</button></div>`;
-//         task.innerHTML += newTask;
-//         input.value="";
-//     }
-// });
+
 form.addEventListener("submit",function addTask(e){
     e.preventDefault();
     if(input.value === ""){
@@ -31,14 +20,14 @@ form.addEventListener("submit",function addTask(e){
         let newTask = `<div id="task-option" class="task-div center-div"> <button id="done">done</button><span id="span">
                         ${input.value}</span>
                          <button>remove</button></div>`;
-        task.innerHTML = newTask + task.innerHTML;
+        task.innerHTML += newTask;
         input.value="";
     }
 });
 
 taskDiv.addEventListener("click", function done(e){
     if(e.target.innerHTML === "done"){
-    //    let targetedTask = e.target.parentElement.querySelector("#span");
+    
        const targetedTask = e.target.nextElementSibling;
        targetedTask.classList.toggle("checked");
     }
@@ -49,9 +38,10 @@ taskDiv.addEventListener("click", function done(e){
 })
 delAll.onclick = function(){
     const taskOptions = document.querySelectorAll(".task-div");
-    console.log(taskOptions)
+    // console.log(taskOptions)
     taskOptions.forEach(item=>{
         item.remove()
     })
 }
+
 
