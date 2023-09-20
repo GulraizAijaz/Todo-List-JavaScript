@@ -51,7 +51,6 @@ form.addEventListener("submit",function addTask(e){
         tasksDiv.innerHTML += newTask;
         setTasksToLocalStorage(input.value);
         input.value="";
-        delAll.style="display:block;"
 
         
     }
@@ -77,6 +76,5 @@ delAll.onclick = function(){
     taskOptions.forEach(item=>{
         item.remove();
     });
-    localStorage.removeItem("storedTasks");
-    delAll.style="display:none;";   
+    localStorage.removeItem("storedTasks");  
 }
