@@ -99,12 +99,27 @@ span{
     font-weight: 900;
     color: rgb(0, 0, 0);
 }
+#task-option{
+    background-color: #d8db3e;
+    border-radius: 5px;
+    align-items: center;
+}
+.checked{
+    text-decoration: line-through #ff0202;
+}
+.del-all{
+    background-color: #7d2389;
+}
+.del-all button{
+    background-color: #ff0000;
+    display: none;
+}
 
     /* styles for mobile screeensss
     styles for mobile screeensss
     styles for mobile screeensss */
 
-@media (max-width:1080px){
+@media (width <= 600px){
 
     *{
         margin: 0px;
@@ -174,10 +189,7 @@ span{
         padding: 2%;
         border-bottom:3px solid black ;
     }
-    .checked{
-        color:rgb(255, 196, 0) ;
-        text-decoration: line-through;
-    }
+    
     .inputs button, button {
         padding: 20px;
         border: none;
@@ -218,13 +230,15 @@ span{
         
        
     }
-    
+    #task-option button{
+        padding: 1% 3px;
+    }
     
     span{
         word-break: break-all;
-        font-size: 1.5em;
-        font-weight: 900;
-        color: rgb(0, 0, 0);
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #000000;
     }
     
 }
